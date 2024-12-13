@@ -1,29 +1,29 @@
-import {
+import type {
 	IAuthenticateGeneric,
 	ICredentialTestRequest,
 	ICredentialType,
 	INodeProperties,
-} from 'n8n-workflow';
+} from "n8n-workflow";
 
-export class HttpBinApi implements ICredentialType {
-	name = 'httpbinApi';
-	displayName = 'HttpBin API';
-	documentationUrl = '<your-docs-url>';
+export class OuraBearerApi implements ICredentialType {
+	name = "ouraBearerApi";
+	displayName = "Oura Bearer API";
+	documentationUrl = "<your-docs-url>";
 	properties: INodeProperties[] = [
 		{
-			displayName: 'Token',
-			name: 'token',
-			type: 'string',
-			default: '',
+			displayName: "Token",
+			name: "token",
+			type: "string",
+			default: "",
 			typeOptions: {
 				password: true,
-			}
+			},
 		},
 		{
-			displayName: 'Domain',
-			name: 'domain',
-			type: 'string',
-			default: 'https://httpbin.org',
+			displayName: "Domain",
+			name: "domain",
+			type: "string",
+			default: "https://oura.org",
 		},
 	];
 
@@ -32,7 +32,7 @@ export class HttpBinApi implements ICredentialType {
 	// An example is the Http Request node that can make generic calls
 	// reusing this credential
 	authenticate: IAuthenticateGeneric = {
-		type: 'generic',
+		type: "generic",
 		properties: {
 			headers: {
 				Authorization: '={{"Bearer " + $credentials.token}}',
@@ -43,8 +43,8 @@ export class HttpBinApi implements ICredentialType {
 	// The block below tells how this credential can be tested
 	test: ICredentialTestRequest = {
 		request: {
-			baseURL: '={{$credentials?.domain}}',
-			url: '/bearer',
+			baseURL: "={{$credentials?.domain}}",
+			url: "/bearer",
 		},
 	};
 }
