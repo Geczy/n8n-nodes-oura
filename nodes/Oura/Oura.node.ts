@@ -17,7 +17,9 @@ export class Oura implements INodeType {
 		defaults: {
 			name: "Oura",
 		},
+		// @ts-expect-error
 		inputs: ["main"],
+		// @ts-expect-error
 		outputs: ["main"],
 		credentials: [
 			{
