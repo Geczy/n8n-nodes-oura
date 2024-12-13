@@ -1,6 +1,6 @@
-import {
-	type INodeType,
-	type INodeTypeDescription,
+import type {
+	INodeType,
+	INodeTypeDescription,
 	NodeConnectionType,
 } from "n8n-workflow";
 import { httpVerbFields, httpVerbOperations } from "./OuraVerbDescription";
@@ -17,8 +17,8 @@ export class Oura implements INodeType {
 		defaults: {
 			name: "Oura",
 		},
-		inputs: [NodeConnectionType.Main],
-		outputs: [NodeConnectionType.Main],
+		inputs: ["main" as NodeConnectionType.Main],
+		outputs: ["main" as NodeConnectionType.Main],
 		credentials: [
 			{
 				name: "ouraBearerApi",
