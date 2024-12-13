@@ -8,7 +8,8 @@ import type {
 export class OuraBearerApi implements ICredentialType {
 	name = "ouraBearerApi";
 	displayName = "Oura Bearer API";
-	documentationUrl = "<your-docs-url>";
+	documentationUrl =
+		"https://docs.n8n.io/integrations/builtin/credentials/oura/";
 	properties: INodeProperties[] = [
 		{
 			displayName: "Token",

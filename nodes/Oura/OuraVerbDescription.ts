@@ -16,6 +16,7 @@ export const httpVerbOperations: INodeProperties[] = [
 		options: [
 			{
 				name: "GET",
+				action: "Get a http verb",
 				value: "get",
 				description: "Perform a GET request",
 				routing: {
@@ -27,6 +28,7 @@ export const httpVerbOperations: INodeProperties[] = [
 			},
 			{
 				name: "DELETE",
+				action: "Delete a http verb",
 				value: "delete",
 				description: "Perform a DELETE request",
 				routing: {
